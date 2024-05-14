@@ -1,0 +1,13 @@
+{% block body %}
+    <link rel="stylesheet" href="/css/formulario.css">
+    {{ form_start(form) }}
+    {{ form_row(form.nombre) }}
+    {{ form_row(form.apellidos) }}
+    {{ form_row(form.correo) }}
+    {{ form_row(form.telefono) }}
+    {{ form_row(form.deportes) }}
+
+
+    <button type="submit" class="btn btn-primary">Apuntate</button>
+    {{ form_end(form) }}
+{% endblock %}

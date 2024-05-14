@@ -1,0 +1,10 @@
+
+
+{% block body %}
+    <link rel="stylesheet" href="/css/formulario.css">
+    {{ form_start(form) }}
+    {{ form_row(form.titulo) }}
+    {{ form_row(form.descripcion) }}
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    {{ form_end(form) }}
+{% endblock %}

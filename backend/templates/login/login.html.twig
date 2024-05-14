@@ -1,0 +1,23 @@
+{% block body %}
+    <link rel="stylesheet" href="/css/formulario.css">
+    {% if app.user %}
+        <p>Bienvenido, {{ app.user.username }}!</p>
+        <a href="{{ path('app_logout') }}">Cerrar sesión</a> 
+    {% else %}
+        <form action="{{ path('app_login') }}" method="post">
+            {% if error %}
+                <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            <label for="username">Email:</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="_password" required>
+
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+            <button type="submit">Iniciar sesión</button>
+        </form>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-image: url('../images/home-image-5.jpg');
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 400px; /* Adjust width as needed */
+    margin: 50px auto; /* Adjust margins for placement */
+    padding: 30px;
+    background-color: #f0f0f0; /* Light gray background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  }
+  
+  /* Form title */
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333; /* Darker text color */
+  }
+  
+  /* Input fields */
+  input[type="text"],
+  input[type="password"] {
+    width: 100%; /* Make inputs span full width */
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Input focus styles */
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    outline: none;
+    border-color: #4CAF50; /* Green border on focus */
+  }
+  
+  /* Label styles */
+  label {
+    display: block; /* Make labels appear above inputs */
+    margin-bottom: 5px;
+    color: #888; /* Lighter text color for labels */
+  }
+  
+  /* Checkbox styles */
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  /* Checkbox label styles */
+  label[for="agreeTerms"] {
+    display: inline; /* Keep label on the same line as checkbox */
+  }
+  
+  /* Button */
+  button[type="submit"] {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth hover effect */
+    margin-top: 20px;
+  }
+  
+  button[type="submit"]:hover {
+    
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  /* Error messages */
+  .form-error {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .image-container {
+    width: 100px; /* Ancho deseado */
+  }
+
+  .image-container img {
+    max-width: 100%; /* La imagen no debe superar el ancho del contenedor */
+    max-height: 100%; /* La imagen no debe superar la altura del contenedor */
+  }
+
+  input[type="submit"] {
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interior */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Borde redondeado */
+    cursor: pointer; /* Cursor tipo mano */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Cambio de color al pasar el mouse */
+}

@@ -1,0 +1,12 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+inicio:
+  path: /
+  controller: App\Controller\InicioController::index
+
+app_logout:
+    path: /logout

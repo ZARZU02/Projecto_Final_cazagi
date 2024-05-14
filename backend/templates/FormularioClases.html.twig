@@ -1,0 +1,12 @@
+
+{% block body %}
+    <link rel="stylesheet" href="/css/formulario.css">
+    {{ form_start(form) }}
+    {{ form_row(form.dia, {'label': 'Selecciona Dia de la  semana'}) }}
+     {{ form_row(form.hora) }}
+    {{ form_row(form.entrenador) }}
+    {{ form_row(form.deporte, {'label': 'Selecciona Clase  del  dia'}) }}
+   
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    {{ form_end(form) }}
+{% endblock %}

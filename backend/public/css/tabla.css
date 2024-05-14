@@ -1,0 +1,113 @@
+/* Reset de estilos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #d9e4f1; /* Azul claro */
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+table {
+  width: 101%;
+  margin-top: 15px;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Establece el fondo blanco para todas las filas de la tabla */
+tr {
+  background-color: #fff; /* Fondo blanco */
+}
+
+/* Mantén los estilos anteriores para las filas impares y para resaltar al pasar el cursor */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+.button-column a {
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.editar-link {
+  color: green;
+}
+
+.eliminar-link {
+  color: red;
+}
+
+/* Estilos para el contenedor del buscador */
+#buscador-container {
+  display: flex;
+  position: relative;
+  width: 300px; /* Ancho del campo de búsqueda */
+}
+
+/* Estilos para la línea del buscador */
+#buscador-linea {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+/* Estilos para el campo de búsqueda */
+#buscador {
+  width: calc(100% - 20px); /* Ajustar para dejar espacio al icono */
+  padding: 10px;
+  border: none;
+  font-size: 16px; /* Tamaño de fuente */
+  background: none; /* Fondo transparente */
+  color: black; /* Color del texto */
+  outline: none; /* Quita el contorno al enfocar */
+  flex: 1; /* El campo de búsqueda ocupará todo el espacio restante */
+}
+
+/* Estilos para el texto del campo de búsqueda */
+#buscador::placeholder {
+  color: black; /* Color del texto de marcador de posición */
+}
+
+.img-pequena {
+  width: 20px;
+  height: 20px;
+}
+
+.img {
+  margin-left: 5px; /* Ajustar el espacio entre el campo de búsqueda y la imagen */
+  flex: auto;
+  width: 20px;
+  height: 20px;
+  float: right; /* Hace que la imagen flote a la derecha */
+  margin-bottom: 1.2em; /* Aproximadamente igual a un salto de línea */
+}

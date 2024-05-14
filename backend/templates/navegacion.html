@@ -1,0 +1,81 @@
+<div id="fh5co-header">
+  <header id="fh5co-header-section">
+    <div class="container">
+      <div class="nav-header">
+        <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle">
+          <i></i>
+        </a>
+        <h1 id="fh5co-logo">
+          <a href="index.html">Fit<span>ness</span></a>
+        </h1>
+        <nav id="fh5co-menu-wrap" role="navigation">
+          <ul class="sf-menu" id="fh5co-primary-menu">
+            <div class="perfil-card"></div>
+            <li class="active">
+              <a href="http://localhost:8000/">Home</a>
+              
+            </li>
+            {% if is_granted('ROLE_ADMIN') %}
+            <li>
+              <a href="http://localhost:8000/user">Usuarios</a>
+            </li>
+            {% endif %}
+
+            {% if is_granted('ROLE_ADMIN') %}
+            <li>
+              <a href="http://localhost:8000/alumnos">Alumnos</a>
+            </li>
+            {% endif %}
+
+            <li>
+              <a class="fh5co-sub-ddown">Entrenamiento y consejos</a>
+              <ul class="barranavegacio">
+                <li>
+                  <a href="http://localhost:8000/consejos">Consejos</a>
+                </li>
+                <li>
+                  <a href="http://localhost:8000/clases">Clases</a>
+                </li>
+                <li>
+                  <a href="http://localhost:8000/entrenadores">Entrenadores</a>
+                </li>
+              </ul>
+            </li>
+          
+            <li>
+              <a href="http://localhost:8000/contactos">Contact</a>
+            </li>
+            {% if app.user is not null %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <li class="nav-item">
+                    <a href="http://localhost:8000/register" class="nav-link">Register</a>
+                </li>
+            {% endif %}
+            {% if app.user.user_delete is not defined %}
+                <li class="nav-item">
+                    <a href="#" class="nav-link usuario" id="cerrarSesion">Bienvenido, {{ app.user.nombre }}</a>
+                </li>
+            {% endif %}
+        {% else %}
+            <li class="nav-item">
+                <a href="http://localhost:8000/login" class="nav-link">Login</a>
+            </li>
+        {% endif %}
+        
+        <script>
+          // Capturamos el elemento de bienvenida por su id
+          const bienvenida = document.getElementById("cerrarSesion");
+        
+          // Agregamos un evento click al elemento
+          bienvenida.addEventListener("click", function () {
+            // Redirigimos a la ruta de logout al hacer clic
+            window.location.href = "{{ path('app_logout') }}";
+          });
+        </script>
+        
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+</div>

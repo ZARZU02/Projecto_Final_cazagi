@@ -1,0 +1,26 @@
+{% block body %}
+
+    <link rel="stylesheet" href="/css/formulario.css">
+
+    {{ form_errors(registrationForm) }}
+
+    {{ form_start(registrationForm) }}
+    {{ form_row(registrationForm.email) }}
+    {{ form_row(registrationForm.plainPassword, {
+            label: 'Contraseña'
+        }) }}
+    {{ form_row(registrationForm.nombre) }}
+    {{ form_row(registrationForm.apellidos) }}
+    {{ form_row(registrationForm.telefono) }}
+    {{ form_row(registrationForm.direccion) }}
+    {{ form_label(registrationForm.deportes, 'Selecciona tu clase favorita') }}
+    {{ form_widget(registrationForm.deportes) }}
+
+    {{ form_label(registrationForm.roles, 'Selecciona tu rol') }}
+    {{ form_widget(registrationForm.roles) }}
+
+    <button type="submit" class="btn">Register</button>
+    {{ form_end(registrationForm) }}
+
+{% endblock %}
+

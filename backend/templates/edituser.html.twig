@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		{% block stylesheets %}
+			<!-- Enlace al archivo templatemo_style.css -->
+                <link rel="stylesheet" href="/css/formulario.css">
+
+		{% endblock %}
+
+		{% block javascripts %}{% endblock %}
+	</head>
+	<body>
+		{% block body %}
+			<div id="form_container">
+				{{ form_start(form) }}
+				<div class="form-group">
+					<label for="{{ form.nombre.vars.id }}">Nombre:</label>
+					{{ form_widget(form.nombre, {'attr': {'class': 'form-control', 'placeholder': 'Enter your first name'}}) }}
+					{{ form_errors(form.nombre) }}
+				</div>
+
+				<div class="form-group">
+					<label for="{{ form.apellidos.vars.id }}">Apellidos:</label>
+					{{ form_widget(form.apellidos, {'attr': {'class': 'form-control', 'placeholder': 'Enter your last name'}}) }}
+					{{ form_errors(form.apellidos) }}
+				</div>
+
+				<div class="form-group">
+					<label for="{{ form.email.vars.id }}">Correo:</label>
+					{{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': 'Enter your email'}}) }}
+					{{ form_errors(form.email) }}
+				</div>
+
+				<div class="form-group">
+					<label for="{{ form.direccion.vars.id }}">Dirección:</label>
+					{{ form_widget(form.direccion, {'attr': {'class': 'form-control', 'placeholder': 'Enter your address'}}) }}
+					{{ form_errors(form.direccion) }}
+				</div>
+
+				<div class="form-group">
+					<label for="{{ form.telefono.vars.id }}">Teléfono:</label>
+					{{ form_widget(form.telefono, {'attr': {'class': 'form-control', 'placeholder': 'Enter your phone number', 'type': 'text', 'inputmode': 'tel'}}) }}
+					{{ form_errors(form.telefono) }}
+				</div>
+
+				<div class="form-group">
+					<label for="{{ form.deportes.vars.id }}">Deportes:</label>
+					{{ form_widget(form.deportes, {'attr': {'class': 'form-control'}}) }}
+					{{ form_errors(form.deportes) }}
+				</div>
+
+
+				{{ form_row(form.submit) }}
+
+				{{ form_end(form) }}
+			</div>
+		{% endblock %}
+	</body>
+</html>

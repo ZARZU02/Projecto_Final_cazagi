@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Lista de Alumnos</title>
+		<link rel="stylesheet" href="/css/tabla.css">
+	</head>
+	<body>
+		<h1>Lista de Alumnos</h1>
+		<!-- Contenedor del buscador -->
+		<div
+			id="buscador-container">
+			<!-- Campo de búsqueda -->
+			<input
+			type="search" placeholder="Buscar  usuario" id="buscador"/>
+			<!-- Línea del buscador -->
+			<div id="buscador-linea"></div>
+			<!-- Icono de lupa -->
+
+		</div>
+		<a href="{{ path('app_inicio') }}">
+			<img src="/images/house-solid.svg" alt="fondo" class="img">
+		</a>
+
+		<table>
+			<tr>
+				<th>Nombre</th>
+				<th>Apellidos</th>
+				<th>Correo</th>
+				<th>Telefono</th>
+				<th>Deportes</th>
+				<th></th>
+			</tr>
+			{% for row in resultados %}
+					<tr>
+						<td>{{ row.getNombre() }}</td>
+						<td>{{ row.getApellidos() }}</td>
+						<td>{{ row.getCorreo() }}</td>
+						<td>{{ row.getTelefono() }}</td>
+						<td>{{ row.getDeportes() }}</td>
+
+						<td class="button-column">
+							<a href="{{ path('alumnos_edit', {'id': row.id})}}" ><img src="/images/pen-to-square-solid.svg" alt="Editar" class="img-pequena"></a>
+							<a href="{{ path('alumnos_delete', {'id': row.id})}}"><img src="/images/trash-solid.svg" alt="Eliminar" class="img-pequena"></a>
+						</td>
+					</tr>
+			{% endfor %}
+		</table>
+
+		<script>
+			document.getElementById("buscador").addEventListener("input", function () {
+var input = this.value.toLowerCase();
+var rows = document.querySelectorAll("table tr");
+
+rows.forEach(function (row, index) {
+if (index !== 0) { // Ignorar la primera fila que contiene los encabezados
+var nombre = row.cells[0].textContent.toLowerCase();
+var apellidos = row.cells[1].textContent.toLowerCase();
+var deportes = row.cells[2].textContent.toLowerCase();
+var correo = row.cells[3].textContent.toLowerCase();
+var direccion = row.cells[4].textContent.toLowerCase();
+var telefono = row.cells[5].textContent.toLowerCase();
+
+if (nombre.includes(input) || apellidos.includes(input) || deportes.includes(input) || correo.includes(input) || direccion.includes(input) || telefono.includes(input)) {
+row.style.display = "";
+} else {
+row.style.display = "none";
+}
+}
+});
+});
+		</script>
+
+
+	</body>
+</html>

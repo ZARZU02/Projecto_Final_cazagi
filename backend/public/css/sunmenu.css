@@ -1,0 +1,41 @@
+
+/* Estilos para el menú desplegable */
+.fh5co-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .fh5co-menu li {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .fh5co-menu li ul {
+    display: none;
+    position: absolute;
+    background-color: #fff; /* Cambia el color de fondo según tus preferencias */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega sombra al menú */
+  }
+  
+  .fh5co-menu li:hover ul {
+    display: block;
+  }
+  
+  .fh5co-menu li ul li {
+    display: block; /* Hace que los elementos de la lista aparezcan uno debajo del otro */
+  }
+  
+  /* Estilos para los enlaces */
+  .fh5co-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333; /* Color del texto */
+  }
+  
+  .fh5co-menu a:hover {
+    background-color: #f0f0f0; /* Cambia el color de fondo al pasar el cursor */
+    color: #555; /* Cambia el color del texto al pasar el cursor */
+  }
+  
