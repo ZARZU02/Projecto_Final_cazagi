@@ -1,0 +1,2 @@
+backend/composer.json filter=lfs diff=lfs merge=lfs -text
+fitness/backend/composer.json filter=lfs diff=lfs merge=lfs -text
